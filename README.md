@@ -132,4 +132,5 @@
   </footer>
 
 </body>
-</html>![foto1](https://github.com/user-attachments/assets/acf1cefd-afe3-40fb-81b4-e8a0bcc0bf0c)
+</html>
+

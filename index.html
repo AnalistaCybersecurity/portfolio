@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ismael Camargo — Portfólio | TI & Segurança do Trabalho</title>
+  <meta name="description" content="Portfólio profissional de TI e Segurança do Trabalho: projetos, experiências, certificações e contatos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+   <link rel="icon" type="image/x-icon" href="img/microchip.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {  
+      --bg: #0b0f17;
+      --card: #0f1624;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --accent: #22d3ee; /* Ciano */
+      --accent-2: #a78bfa; /* Roxo claro */
+      --ring: rgba(34, 211, 238, 0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --muted: #64748b;
+        --text: #0f172a;
+        --shadow: 0 10px 30px rgba(2,6,23,0.08);
+        --ring: rgba(99,102,241,0.25);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    h1 {
+        font-family:cursive;
+    }
+    body{
+      font-family: inherit, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 85% -10%, rgba(34,211,238,0.08), transparent 60%),
+                  radial-gradient(1000px 600px at -10% 10%, rgba(167,139,250,0.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(15,22,36,0.8), rgba(15,22,36,0.35));
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{
+      width:40px;height:40px;border-radius:12px;
+      background: conic-gradient(from 210deg, var(--accent), var(--accent-2));
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.25), 0 0 30px rgba(34,211,238,0.25);
+    }
+    .brand h1{font-size:18px;margin:0;font-weight:700}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{padding:10px 12px;border-radius:12px;color:var(--muted)}
+    .nav-links a:hover{color:var(--text);background:rgba(148,163,184,0.12)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(148,163,184,0.25);background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));box-shadow:var(--shadow)}
+    .btn.primary{border-color:transparent;background:linear-gradient(90deg, var(--accent), var(--accent-2));color:#0b0f17;font-weight:700}
+    .btn:hover{transform:translateY(-1px);transition:transform .15s ease}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:48px 24px}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr;}}
+    .hero h2{font-size:clamp(28px, 4vw, 42px);margin:0 0 12px;font-weight:800;letter-spacing:-0.02em}
+    .hero p{color:var(--muted);margin:0 0 22px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+    .badge{font-size:12px;border:1px solid rgba(148,163,184,0.25);padding:6px 10px;border-radius:999px;color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));border:1px solid rgba(148,163,184,0.15);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    .hero-visual{position:relative;overflow:hidden;border-radius:var(--radius);}
+    .hero-visual .frame{aspect-ratio: 4/3; background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat; border-bottom:1px solid rgba(148,163,184,0.15)}
+    .hero-visual .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(148,163,184,0.15)}
+    .hero-visual .strip img{aspect-ratio: 1/1;object-fit:cover}
+
+    section{padding:36px 24px}
+    section h3{font-size:22px;margin:0 0 16px}
+
+    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+    @media (max-width: 900px){.about{grid-template-columns:1fr}}
+
+    .about .cover{overflow:hidden;border-radius:var(--radius)}
+    .about .cover img{aspect-ratio: 4/3;object-fit:cover}
+
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    @media (max-width: 1000px){.grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 700px){.grid.cols-3,.grid.cols-4,.grid.cols-2{grid-template-columns:1fr}}
+
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,0.25);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    .list{display:flex;flex-wrap:wrap;gap:8px}
+
+    .proj-card{overflow:hidden}
+    .proj-card img{aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid rgba(148,163,184,0.15)}
+    .proj-card .content{padding:14px}
+    .proj-card h4{margin:0 0 8px;font-size:18px}
+    .proj-card p{margin:0 0 12px;color:var(--muted)}
+    .proj-actions{display:flex;gap:10px}
+
+    .timeline{position:relative}
+    .timeline::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(180deg, var(--accent), transparent)}
+    .titem{position:relative;padding-left:48px;margin-bottom:18px}
+    .titem::before{content:"";position:absolute;left:10px;top:6px;width:16px;height:16px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+    .titem h4{margin:0 0 6px}
+    .titem .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
+
+    .cert{display:flex;gap:14px;align-items:flex-start}
+    .cert img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+    .contact form{display:grid;gap:12px}
+    input, textarea{
+      width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(148,163,184,0.25);
+      background:rgba(2,6,23,0.25);color:var(--text);outline:none;
+    }
+    input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+
+    .footer{padding:28px 24px;color:var(--muted);border-top:1px solid rgba(148,163,184,0.15);text-align:center}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{border:1px dashed rgba(148,163,184,0.35);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:800px){.split{grid-template-columns:1fr}}
+   .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a class="brand" href="#top" aria-label="Ir para o topo">        
+        <img src="F11/Sem título.png"  object-fit="cover" height="100px width="60px" alt="icone de perfil">
+        <h1>Ismael Camargo</h1>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#experiencia">Experiências</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#certificacoes">Certificações</a>
+        <a href="#contato" class="btn">Contato</a>
+        <button id="themeToggle" class="btn" aria-label="Alternar tema">🌗</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero container">
+    <div>
+      <h2>Profissional de <span style="background: linear-gradient(90deg, var(--accent), var(--accent-2));-webkit-background-clip: text;background-clip: text;color: transparent;">TI & Segurança do Trabalho</span></h2>
+      <p>Incorporo tecnologia e prevenção para criar ambientes de trabalho mais <strong>seguros, eficientes</strong> e em conformidade. Experiência em suporte, redes e segurança da informação, com sólida atuação em <abbr title="Saúde e Segurança do Trabalho">SST</abbr> (NRs, PPRA/PGR, treinamentos e cultura de segurança).</p>
+      <div class="badges">
+        <span class="badge">Infra & Redes</span>
+        <span class="badge">Segurança da Informação</span>
+        <span class="badge">PGR / PCMSO</span>
+        <span class="badge">NR-10 • NR-35</span>
+        <span class="badge">ISO 45001</span>
+         <span class="badge">ISO 14001</span>
+        <span class="badge">CIPA</span>
+        <span class="badge">ESG</span>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:18px">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#contato">Fale comigo</a>
+      </div>
+    </div>
+    <div class="hero-visual card" aria-hidden="true">
+      <div class="frame"></div>
+      <div class="strip">
+        <img alt="Dash de segurança" src="F11/dashseg.jpg"/>
+        <img alt="Equipe em obra com EPI" src="F11/Equipe em obra.jpg"/>
+        <img alt="Checklist de segurança" src="F11/checklist.png"/>
+        <img alt="segurança da informação" src="F11/seguranca-da-informacao.jpg"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="container">
+    <h3>Sobre mim</h3>
+    <div class="about">
+      <div class="cover card">
+    <img src="F11/kali.png" alt="Foto">      
+      </div>
+      <div class="card" style="padding:18px">
+        <p><strong>Resumo:</strong> Profissional com formação em <em>Gestão de Segurança do Trabalho</em></strong> e implantação de <strong>boas práticas de SST</strong> no chão de
+           fábrica e em escritórios. Foco em dados, indicadores e melhoria contínua.<br> <strong>TI: </strong>Profissional em desenvolvimento na área de Segurança da Informação, graduado em Análise e Desenvolvimento de Sistemas e pós-graduado em Cybercrimes e Cybersecurity. Detentor de certificações técnicas em SOC, DevSecOps, Segurança em Linux e Cybersecurity Awareness (IBSEC), com experiência em ambientes Linux e interesse em ampliar conhecimentos em defesa cibernética e resposta a incidentes. Comprometido com o aprendizado contínuo e a aplicação de boas práticas de segurança em infraestrutura e software. </p>
+        <div class="split">
+          <div>
+            <h4 style="margin:0 0 8px">Áreas de Atuação</h4>
+            <div class="list">
+              <span class="pill">Help Desk / Field</span>
+              <span class="pill">AD • O365 • Azure</span>
+              <span class="pill">Redes / Wi‑Fi / VLAN</span>
+              <span class="pill">Backup & DR</span>
+              <span class="pill">Licenciamento Ambiental</span>
+              <span class="pill">SST • PGR • APR</span>
+              <span class="pill">Treinamentos & DDS</span>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 8px">Diferenciais</h4>
+            <ul style="margin:0 0 0 18px">
+              <li>Integração TI + SST para redução de incidentes</li>
+              <li>Criação de dashboards e checklists digitais</li>
+              <li>Comunicação clara e foco no usuário</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="container">
+    <h3>Habilidades</h3>
+    <div class="grid cols-2">
+      <div class="card" style="padding:16px">
+        <h4 style="margin:0 0 10px">Tecnologia da Informação</h4>
+        <div class="tags">
+          <span class="tag">Windows • Linux</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Office 365 / M365</span>
+          <span class="tag">Redes • TCP/IP • DHCP • DNS</span>
+          <span class="tag">Firewall • VPN</span>
+          <span class="tag">ITIL • Suporte N1/N2</span>
+          <span class="tag">Backup • Monitoramento</span>
+        </div>
+      </div>
+      <div class="card" style="padding:16px">
+        <h4 style="margin:0 0 10px">Segurança do Trabalho</h4>
+        <div class="tags">
+          <span class="tag">PGR • PCMSO</span>
+          <span class="tag">APR • Permissão de Trabalho</span>
+          <span class="tag">NR-06 • EPI</span>
+          <span class="tag">NR-10 • NR-12 • NR-17</span>
+          <span class="tag">NR-33 • NR-35</span>
+          <span class="tag">CAT • Investigação de Acidentes</span>
+          <span class="tag">ISO 45001 (noções)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIAS -->
+  <section id="experiencia" class="container">
+    <h3>Experiências</h3>
+    <div class="timeline">
+       <div class="titem card" style="padding:14px">
+        <h4>Analista de Suporte / Coordenador de projeto Social</h4>
+        <div class="meta">Comitê para Democratização da Informática - CDI • 2005-2007 • Vitória-ES</div>
+        <p>❆ Principais atividades e resultados:<br>❆ Coordenação e Liderança: Supervisiona equipe de instrutores e organiza as
+           dinâmicas de ensino, promovendo um ambiente colaborativo e interativo para garantir a efetividade do aprendizado.<br>
+          ❆ Gestão de Infraestrutura de TI: Realizei manutenção de servidores Thin Client, garantindo o bom funcionamento da rede, 
+          gerenciando a inserção de usuários no sistema, atribuindo permissionamento e resolvendo problemas técnicos.  A atuação no suporte de TI foi fundamental para
+           garantir que os recursos estivessem sempre disponíveis para os alunos.<br>❆ Aplicar dinâmicas de grupo voltadas para integração, fortalecimento de competências interpessoais com objetivo 
+           profissional.<br>❆ Atuação híbrida em TI: atendimento a usuários, administração básica de
+        rede e servidor windows.</p>
+      </div>
+      <div class="titem card" style="padding:14px">
+        <h4>Analista de Estoque / Administrativo</h4>
+        <div class="meta">Empresa BRAVAL • 2008-2012 • Valença-RJ</div>
+        <p>❆ Responsável pela gestão do almoxarifado, incluindo solicitação de pedidos, recebimento e conferência de notas fiscais;<br>
+         ❆ Lançamento e controle de estoque em sistema informatizado, garantindo rastreabilidade e organização dos materiais;<br>
+         ❆ Realização de inventários periódicos para assegurar a acuracidade do estoque;<br>❆ Identificação, separação e solicitação de troca de materiais não conformes.</p>
+         <b>Resultodos e conquistas:<b><br>✠ Apoio diretamente o aumento da capacidade produtiva da empresa:<br>✦ 2008: <Pic></Pic>Produção de 2 subestações/mês;
+         <br>✦ 2009: Ampliação para 10 subestações/mês;<br>✦ 2011: Consolidação de 22 subestações/mês.
+
+      </div>
+      <div class="titem card" style="padding:14px">
+      <div class="container" height="100vh" width="80vh">
+        <img src="F11/seg.Trab.jpg" alt="img" height="60%" width="40%" align="right" />
+        <h4>Agente de Defesa Ambiental</h4>
+        <div class="meta">Prefeitura Municipal de Fundão-ES • 2005 - 2008  e  2013 </div>
+        <p>I. Fiscalização Ambiental<br>✦ Inspecionar áreas urbanas e rurais para verificar irregularidades ambientais.<br>✦ Fiscalizar desmatamento, queimadas, poluição 
+        sonora, do ar, do solo e da água.<br>✦ Verificar o cumprimento de leis ambientais, licenças e autorizações.<br><br><strong>II. Proteção e Preservação</strong><b><br>
+        ❂ Apoiar ações de reflorestamento, manejo sustentável e conservação da biodiversidade.<br>❂ Colaborar em programas de educação ambiental e 
+        sensibilização da comunidade.<br><br>III. Prevenção e Resposta a Desastre Ambiental <br>❉  Atuar em casos de desastres naturais e tecnológicos (enchentes, 
+        incêndios florestais, vazamentos de produtos químicos etc.).<br>❉ Executar medidas de prevenção e mitigação de riscos ambientais.<br><br>
+       IV. Apoio Técnico e Administrativo<br>✥  Elaborar relatórios, autos de infração e pareceres técnicos.<br>✥ Participar de levantamentos e monitoramentos 
+        ambientais (fauna, flora, qualidade da água, solo e ar).<br>✥ Auxiliar em projetos ambientais junto a órgãos públicos e privados. <br><br>
+       V. Integração Interagências<br>✠ Trabalhar em conjunto com órgãos como IBAMA, Polícia Militar Ambiental, Corpo de Bombeiros.<br>✠ Apoiar 
+        operações conjuntas de fiscalização e segurança em áreas de risco.
+        </p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="container">
+    <h3>Projetos em Destaque</h3>
+    <div class="grid cols-3">
+      <article class="proj-card card">
+        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1400&auto=format&fit=crop" alt="Projeto dashboard de segurança" />
+        <div class="content">
+          <h4>Dashboard de Segurança (Power BI)</h4>
+          <p>Painel com indicadores de acidentes, quase-acidentes, inspeções e treinamentos. Integração com forms e planilhas.</p>
+          <div class="list">
+            <span class="pill">BI</span><span class="pill">Indicadores</span><span class="pill">SST</span>
+          </div>
+          <div class="proj-actions" style="margin-top:12px">
+            <a class="btn" href="#">Demo</a>
+            <a class="btn" href="#">Código / Fonte</a>
+          </div>
+        </div>
+      </article>
+      <article class="proj-card card">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Automação de checklist" />
+        <div class="content">
+          <h4>Checklist Digital de Inspeções</h4>
+          <p>Automação de checklists (manutenção, EPI, extintores) com planilhas e Apps Script, geração de alertas por e‑mail.</p>
+          <div class="list">
+            <span class="pill">Apps Script</span><span class="pill">Automação</span><span class="pill">Geração de PDF</span>
+          </div>
+          <div class="proj-actions" style="margin-top:12px">
+            <a class="btn" href="#">Demo</a>
+            <a class="btn" href="#">Código</a>
+          </div>
+        </div>
+      </article>
+      <article class="proj-card card">
+        <img src="F11/data_center.png" alt="Infraestrutura de redes" />
+        <div class="content">
+          <h4>Infra & Redes para Escritório</h4>
+          <p>Implantação de rede cabeada + Wi‑Fi com segmentação VLAN, VPN e backup automatizado para NAS.</p>
+          <div class="list">
+            <span class="pill">Redes</span><span class="pill">Firewall</span><span class="pill">Backup</span>
+          </div>
+          <div class="proj-actions" style="margin-top:12px">
+            <a class="btn" href="#">Case</a>
+            <a class="btn" href="#">Arquitetura</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICAÇÕES -->
+  <section id="certificacoes" class="container">
+    <h3>Certificações & Treinamentos</h3>
+    <div class="grid cols-3">
+      <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\PT-IC-SOC-380.png" alt="Badge TI" />
+        <div>
+          <strong>Analista SOC</strong>
+          <div class="muted">IBSEC - Instituto Brasileiro de Cibersegurança • 2025</div>
+        </div>        
+      </div>
+
+      <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\PT-IC-SEC-1783.png" alt="Badge NR-10" />
+        <div>
+          <strong>Boas Práticas de Cibersegurança (Cybersecurity Awareness)</strong>
+          <div class="muted">IBSEC - Instituto Brasileiro de Cibersegurança • 2025</div>
+        </div>
+      </div>
+
+      <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\Segurança Linux.png" alt="Badge NR-10" />
+        <div>
+          <strong>Segurança de Linux</strong>
+          <div class="muted">IBSEC - Instituto Brasileiro de Cibersegurança • 2025</div>
+        </div>
+      </div>
+
+       <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\introduction to cybersecurity.png" alt="Badge NR-10" />
+        <div>
+          <strong>Introdução a Cibersegurança</strong>
+          <div class="muted">CISCO Networking Academy • 2025</div>
+        </div>
+      </div>
+
+      <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\Networking Basics.png" alt="Badge NR-10" />
+        <div>
+          <strong>Networking Basics</strong>
+          <div class="muted">CISCO Networking Academy • 2025</div>
+        </div>
+      </div>
+      
+
+      <div class="card cert" style="padding:12px">
+        <img src="D:\Projetos\portfolio\F11\PT-IC-DEVSECOPS-760.png" alt="Badge ISO" />
+        <div>
+          <strong>Desenvolvimento Seguro de Sofware (DevSecOps)</strong>
+          <div class="muted">IBSEC - Instituto Brasileiro de Cibersegurança • 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="container">
+    <h3>Contato</h3>
+    <div class="contact">
+      <div class="card" style="padding:16px">
+        <h4 style="margin-top:0">Vamos conversar?</h4>
+        <p class="muted">Prefere e‑mail, WhatsApp ou LinkedIn? Respondo rápido 🙂</p>
+        <ul style="margin:0 0 0 16px">
+          <li>E‑mail: <a href="mailto:camargo.uff@gmail.com">camargo.uff@gmail.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/5527992663412" target="_blank" rel="noopener">+55 (27) 99266-3412</a></li>
+          <li>LinkedIn: 
+          <a href="https://www.linkedin.com/in/ismael-camargo-0467091a5" target="_blank" rel="noopener">
+            www.linkedin.com/in/ismael-camargo-0467091a5
+          </a>
+         </li>
+
+        <li>GitHub: 
+          <a href="https://github.com/camargo-es?tab=repositories" target="_blank" rel="noopener">
+            github.com/camargo-es
+          </a>
+        </li>
+
+        <li>Currículo Lattes: 
+          <a href="http://lattes.cnpq.br/3509834322755532" target="_blank" rel="noopener">
+            lattes.cnpq.br/3509834322755532
+          </a>
+        </li>
+        </ul>
+      </div>
+      <form class="card" style="padding:16px" onsubmit="event.preventDefault(); alert('Mensagem enviada! (exemplo)');">
+        <label>
+          <span class="visually-hidden">IsmaelCamargo</span>
+          <input required placeholder="Ismael Camargo" />
+        </label>
+        <label>
+          <span class="visualmente-hidden">E‑mail</span>
+          <input type="email" required placeholder="Seu e‑mail" />
+        </label>
+        <label>
+          <span class="visually-hidden">Mensagem</span>
+          <textarea rows="5" required placeholder="Como posso ajudar?"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Enviar mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> - 2026 🤖 Ismael Camargo @ TI & Segurança do Trabalho 🏃🏽
+  </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Alternar tema claro/escuro
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      const isLight = document.documentElement.dataset.theme === 'light';
+      document.documentElement.dataset.theme = isLight ? 'dark' : 'light';
+      if(!isLight){
+        // tema claro
+        document.documentElement.style.setProperty('--bg', '#f8fafc');
+        document.documentElement.style.setProperty('--card', '#ffffff');
+        document.documentElement.style.setProperty('--muted', '#64748b');
+        document.documentElement.style.setProperty('--text', '#0f172a');
+        document.documentElement.style.setProperty('--shadow', '0 10px 30px rgba(2,6,23,0.08)');
+        document.documentElement.style.setProperty('--ring', 'rgba(99,102,241,0.25)');
+      } else {
+        // tema escuro
+        document.documentElement.style.setProperty('--bg', '#0b0f17');
+        document.documentElement.style.setProperty('--card', '#0f1624');
+        document.documentElement.style.setProperty('--muted', '#94a3b8');
+        document.documentElement.style.setProperty('--text', '#e2e8f0');
+        document.documentElement.style.setProperty('--shadow', '0 10px 30px rgba(0,0,0,0.35)');
+        document.documentElement.style.setProperty('--ring', 'rgba(34, 211, 238, 0.35)');
+      }
+    });
+  </script>
+</body>
+</html>
